@@ -40,7 +40,7 @@ app.use("/api/category", categoryRoutes);
 app.use("/api/order", orderRoutes);
 app.use("/api/position", positionRoutes);
 
-if (process.nextTick.NODE_ENV === "pruduction") {
+if (process.env.NODE_ENV === "pruduction") {
   app.use(express.static("client/dist/client"));
 
   app.get("*", (req, res) => {
